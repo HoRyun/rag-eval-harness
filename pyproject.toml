@@ -1,0 +1,30 @@
+[project]
+name = "rag-eval-harness"
+version = "0.1.0"
+description = "CLI tool for evaluating local RAG retrieval quality."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.27.0",
+    "PyYAML>=6.0.0",
+    "rich>=13.0.0",
+    "typer>=0.12.0",
+]
+
+[project.scripts]
+rag-eval = "rag_eval.main:app"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["rag_eval"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,7 @@
+cases:
+  - id: sample-001
+    question: "What does the sample document explain?"
+    expected_sources:
+      - "sample.md"
+    expected_keywords:
+      - "sample"
